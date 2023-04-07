@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="帧动画，顾名思义就是通过一张张图片通过快速切换而到达的一种视觉效果，
+        看起来像图片中的物体动起来一般，我们平常说的 60帧，120帧，指的就是一秒钟播放 60张图片或 120 张图片。"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="帧动画"
+        android:id="@+id/btn_animation"/>
+
+</LinearLayout>
