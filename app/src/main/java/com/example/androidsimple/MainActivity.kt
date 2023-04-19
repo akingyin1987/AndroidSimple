@@ -1,9 +1,9 @@
 package com.example.androidsimple
 
 import android.content.Intent
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.example.androidsimple.base.BaseActivity
 import com.example.androidsimple.databinding.MainBinding
+import com.example.androidsimple.lock.LockMainActivity
 
 /**
  *
@@ -15,16 +15,26 @@ import com.example.androidsimple.databinding.MainBinding
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<MainBinding>() {
 
-    private  lateinit var  bindView:MainBinding
+    override fun getViewBinding(): MainBinding {
+       return MainBinding.inflate(layoutInflater)
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        bindView = MainBinding.inflate(layoutInflater)
-        setContentView(bindView.root)
-        bindView.btnAndroidAnimation.setOnClickListener {
-           startActivity(Intent(this,AnimationActivity::class.java))
+    override fun initBindDataAndUi() {
+        binding.btnAndroidAnimation.setOnClickListener {
+            startActivity(Intent(this,AnimationActivity::class.java))
+        }
+        binding.btnAndroidLock.setOnClickListener {
+            startActivity(Intent(this,LockMainActivity::class.java))
+        }
+        binding.btnIntentFlag.setOnClickListener {
+            startActivity(Intent(this,LaunchModeActivity::class.java))
+        }
+        binding.btnCoroutine.setOnClickListener {
+            startActivity(Intent(this,CoroutineActivity::class.java))
         }
     }
+
+
 }

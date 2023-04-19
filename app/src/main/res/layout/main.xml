@@ -12,4 +12,41 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="动画"/>
 
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_android_event"
+        app:layout_constraintTop_toBottomOf="@+id/btn_android_animation"
+        android:text="事件分发"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_android_lock"
+        app:layout_constraintTop_toBottomOf="@+id/btn_android_event"
+        android:text="Lock"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_intent_flag"
+        app:layout_constraintTop_toBottomOf="@+id/btn_android_lock"
+        android:text="Intent flag"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_coroutine"
+        app:layout_constraintTop_toBottomOf="@+id/btn_android_lock"
+        android:text="协程"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_thread_local"
+        app:layout_constraintTop_toBottomOf="@+id/btn_coroutine"
+        android:text="ThreadLocal"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
