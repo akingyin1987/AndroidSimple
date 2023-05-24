@@ -1,9 +1,10 @@
+//enableFeaturePreview("VERSION_CATALOGS")
 pluginManagement {
     repositories {
         google()
       //  mavenCentral()
        // gradlePluginPortal()
-        maven { url "https://maven.aliyun.com/repository/public/" }
+        maven { setUrl( "https://maven.aliyun.com/repository/public/") }
     }
 }
 dependencyResolutionManagement {
@@ -11,9 +12,9 @@ dependencyResolutionManagement {
     repositories {
         google()
        // mavenCentral()
-        maven { url "https://maven.aliyun.com/repository/public/" }
+        maven { setUrl( "https://maven.aliyun.com/repository/public/") }
         mavenCentral()
     }
 }
 rootProject.name = "AndroidSimple"
-include ':app'
+include (":app")
