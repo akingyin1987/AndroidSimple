@@ -3,6 +3,7 @@ package com.example.androidsimple
 import android.content.Intent
 import com.example.androidsimple.base.BaseActivity
 import com.example.androidsimple.databinding.MainBinding
+import com.example.androidsimple.fragment.MainFragmentActivity
 import com.example.androidsimple.lock.LockMainActivity
 
 /**
@@ -33,6 +34,9 @@ class MainActivity : BaseActivity<MainBinding>() {
         }
         binding.btnCoroutine.setOnClickListener {
             startActivity(Intent(this,CoroutineActivity::class.java))
+        }
+        binding.btnFragment.setOnClickListener {
+            startActivity(Intent(this,MainFragmentActivity::class.java))
         }
     }
 

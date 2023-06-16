@@ -3,6 +3,7 @@ package com.example.androidsimple.base
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,8 +21,10 @@ import androidx.viewbinding.ViewBinding
  * @Version: 1.0
  */
 abstract class BaseFragment<T:ViewBinding> : Fragment() {
-
+    val TAG: String = this.javaClass.simpleName+this.hashCode()
     lateinit var    binding:T
+
+
 
     abstract fun initBindView( inflater: LayoutInflater,container: ViewGroup?):T
 
@@ -30,12 +33,14 @@ abstract class BaseFragment<T:ViewBinding> : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        println("onAttach：与上下文进行绑定")
+        Log.d(TAG,"onAttach：与上下文进行绑定")
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("onCreate：创建fragment")
+        Log.d(TAG,"onCreate：创建fragment")
+
     }
 
     override fun onCreateView(
@@ -43,7 +48,8 @@ abstract class BaseFragment<T:ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ):View {
-        println("onCreateView:创建fragment ui")
+        Log.d(TAG,"onCreateView:创建fragment ui")
+
        return initBindView(inflater, container).also {
            binding = it
        }.root
@@ -52,43 +58,52 @@ abstract class BaseFragment<T:ViewBinding> : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        println("onViewCreated 创建UI 后调用")
+
+        Log.d(TAG,"onViewCreated 创建UI 后调用")
+
         super.onViewCreated(view, savedInstanceState)
         initBindDataAndUid()
     }
 
     override fun onStart() {
         super.onStart()
-        println("onStart")
+        Log.d(TAG,"onStart")
+
     }
 
     override fun onResume() {
         super.onResume()
-        println("onResume")
+        Log.d(TAG,"onResume")
+
     }
 
     override fun onPause() {
         super.onPause()
-        println("onPause")
+        Log.d(TAG,"onPause")
+
     }
 
     override fun onStop() {
         super.onStop()
-        println("onStop")
+        Log.d(TAG,"onStop")
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        println("onDestroyView 销毁fragment UI")
+        Log.d(TAG,"onDestroyView 销毁fragment UI")
+
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        println("onDestroy")
+        Log.d(TAG,"onDestroy")
+
     }
 
     override fun onDetach() {
         super.onDetach()
-        println("onDetach 解绑")
+        Log.d(TAG,"onDetach 解绑")
+
     }
 }

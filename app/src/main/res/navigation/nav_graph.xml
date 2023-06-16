@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_context1"
+    android:id="@+id/nav_graph">
+    <fragment
+        android:id="@+id/fragment_context1"
+        android:name="com.example.androidsimple.fragment.FragmentContext"
+        android:label="内容1"
+        tools:layout="@layout/fragment_content">
+        <action
+            android:id="@+id/action_to_context2"
+
+            app:destination="@id/fragment_context2"
+           />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_context2"
+        android:name="com.example.androidsimple.fragment.FragmentContext2"
+        android:label="内容2"
+        tools:layout="@layout/fragment_content">
+
+
+        <argument
+            android:name="key"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

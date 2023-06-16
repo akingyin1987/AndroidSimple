@@ -1,5 +1,8 @@
 plugins {
     id("com.android.application")
+    id("androidx.navigation.safeargs")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
     kotlin("android")
 
 }
@@ -71,6 +74,7 @@ android {
 dependencies {
 
     val  lifecycle_version = "2.6.0"
+
     implementation ("androidx.core:core-ktx:1.9.0")
     implementation ("androidx.appcompat:appcompat:1.5.1")
     implementation ("com.google.android.material:material:1.6.1")
@@ -82,6 +86,27 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
     implementation("io.coil-kt:coil:2.3.0")
+
+    val nav_version = "2.5.3"
+    // Kotlin
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    val hiltVersion = "2.44"
+    implementation ("com.google.dagger:hilt-android:$hiltVersion")
+    kapt ("com.google.dagger:hilt-android-compiler:$hiltVersion")
+
+    // Hilt testing
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:$hiltVersion")
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:$hiltVersion")
+
+    // Feature module Support
+   // implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+
+    // Testing Navigation
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
+    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.11")
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
