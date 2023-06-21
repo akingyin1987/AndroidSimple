@@ -36,6 +36,9 @@
         <activity android:name=".LaunchModeActivity"/>
         <activity android:name=".CoroutineActivity"/>
         <activity android:name=".fragment.MainFragmentActivity"/>
+        <activity android:name=".bigview.LoadMediaActivity"/>
+        <activity android:name=".bigview.LongImageLoadActivity"/>
+        <activity android:name=".bigview.BigImageLoadActivity"/>
     </application>
 
 </manifest>

@@ -9,6 +9,6 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true"
 
-    app:defaultNavHost="false"
+    app:defaultNavHost="true"
 
     />

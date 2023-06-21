@@ -2,6 +2,9 @@ package com.example.androidsimple.fragment
 
 
 
+import android.app.Activity
+import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.NavHostFragment
 import com.example.androidsimple.R
 import com.example.androidsimple.base.BaseActivity
@@ -26,6 +29,16 @@ class MainFragmentActivity :BaseActivity<ActivityMainFragmentBinding>(){
         return ActivityMainFragmentBinding.inflate(layoutInflater)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        onBackPressedDispatcher.addCallback(this,object :OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+               setResult(Activity.RESULT_OK)
+                finish()
+            }
+
+        })
+    }
     override fun initBindDataAndUi() {
          binding.fragmentContainer.post {
 
@@ -35,4 +48,5 @@ class MainFragmentActivity :BaseActivity<ActivityMainFragmentBinding>(){
              }
          }
     }
+
 }
